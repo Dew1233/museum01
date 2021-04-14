@@ -1,0 +1,25 @@
+
+a{
+    color: #fff;
+}
+.yegui-form{
+    position: relative;
+    border: 1px solid rgb(135, 154, 172);
+    border-radius: 20px;
+    top: 100px;
+    padding: 20px;
+    background: rgb(44 50 60);
+    color: #fff;
+}
+canvas {
+    display:block;
+    position:absolute;
+    z-index:-1;
+    opacity: 0.85;
+}
+.layui-elem-field legend {
+    margin: auto;
+}
+.layui-btn{
+    background-color: rgb(54, 126, 207);
+}
