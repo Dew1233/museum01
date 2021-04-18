@@ -1,7 +1,10 @@
 package com.yegol.museum.portal.service;
 
+import com.github.pagehelper.PageInfo;
 import com.yegol.museum.portal.model.Announcement;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IAnnouncementService extends IService<Announcement> {
 
+    PageInfo<Announcement> getAnnouncement(Integer pageNum, Integer pageSize);
 }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+</head>
+<body>
+<div class="layui-container">
+    <div class="layui-item">
+        <input type="layui-form-input">
+        <textarea id="demo" style="display: none;"></textarea>
+
+    </div>
+</div>
+<script src="/layui/layui.js"></script>
+<script>
+    layui.use('layedit', function(){
+        var layedit = layui.layedit;
+        layedit.build('demo'); //建立编辑器
+    });
+</script>
+<script src="/jquery/dist/jquery.js"></script>
+<script src="/vue/dist/vue.js"></script>
+<script src="/js/index.js"></script>
+</body>
+</html>

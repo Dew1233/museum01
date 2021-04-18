@@ -3,6 +3,8 @@ package com.yegol.museum.portal.service;
 import com.yegol.museum.portal.model.Category;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ICategoryService extends IService<Category> {
 
+    List<Category> getCategs();
 }

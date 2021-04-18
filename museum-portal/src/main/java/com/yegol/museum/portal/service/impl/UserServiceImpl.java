@@ -39,7 +39,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         if(user==null){
             return null;
         }
-        log.debug("密码问题01：{}",user);
+//        log.debug("密码问题01：{}",user);
         List<Permission> ps = userMapper
                 .findUserPermissionsById(user.getId());
         String[] auth = new String[ps.size()];
@@ -77,7 +77,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         stu.setEnabled(1);
         // 3.执行新增学生到user表
         int num=userMapper.insert(stu);
-        log.debug("新增了:{}",num);
+//        log.debug("新增了:{}",num);
         if(num!=1){
             throw ServiceException.busy();
         }

@@ -33,12 +33,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.headers().frameOptions().disable();
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers(
-                        "index.html",
+//                        "index.html",
                         "/layui/**",
                         "/yegui/**",
+                        "/js/*",
+                        "/vue/**",
+                        "/jquery/**",
                         "/login.html",
                         "/register.html",
                         "/login",

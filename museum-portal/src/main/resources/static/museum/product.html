@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+</head>
+<body>
+<div class="layui-container" >
+    <div id="announcementApp">
+        <div class="layui-form-item" v-for="announce in announcements">
+            <a href="" v-text="announce.title">标题</a>
+            <p v-html="announce.acontent" style="
+            overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;-webkit-box-orient: vertical;">内容</p>
+
+            <a id="update" href="#"style="color: #2D93CA" >修改</a>
+            <a href="#"  style="color: #2D93CA">删除</a>
+        </div>
+
+        <div class="pagination">
+            <a class="page-item page-link" href="#"
+               v-on:click.prevent="loadQuestions(pageInfo.prePage)"
+            >上一页</a>
+            <a class="page-item page-link " href="#"
+               v-for="n in pageInfo.navigatepageNums"
+               v-on:click.prevent="loadQuestions(n)"
+               v-bind:class="{'bg-secondary text-light': n == pageInfo.pageNum}"
+            ><span v-text="n">1</span></a>
+            <a class="page-item page-link" href="#"
+               v-on:click.prevent="loadQuestions(pageInfo.nextPage)"
+            >下一页</a>
+        </div>
+    </div>
+
+</div>
+<script src="/layui/layui.js"></script>
+<script src="/jquery/dist/jquery.js"></script>
+<script src="/vue/dist/vue.js"></script>
+<script src="/js/index.js"></script>
+<script src="/layui/layui.js"></script>
+<script>
+    layui.use('layer',function(){
+        var layer = layui.layer
+        $=layui.$;
+        $("#update").onclick(function(){
+            layer.open({
+                type: 2,
+                skin: 'layui-layer-demo', //样式类名
+                title: '修改当前信息',
+                closeBtn: 0, //不显示关闭按钮
+                anim: 2,
+                area: ['893px', '600px'],
+                shadeClose: true, //开启遮罩关闭
+                content: 'update.html'
+            });
+        })
+
+    });
+</script>
+</body>
+</html>
